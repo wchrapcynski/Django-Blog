@@ -70,8 +70,8 @@ def add_comment_to_post(request, pk):
         form = CommentForm(request.Post)
         if form.is_valid():
             comment = form.save(commit=False)
-            commit.post = post
-            commit.save()
+            comment.post = post
+            comment.save()
             return redirect('post_detail', pk=post.pk)
         else:
             form = CommentForm()
