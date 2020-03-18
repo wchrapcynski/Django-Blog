@@ -1,14 +1,29 @@
-:root {
+body {
     font-family: 'Roboto', sans-serif;
 }
 
 .navfont {
     font-size: 1.5em;
     margin-bottom: 10px;
+    .container {
+        .nav {
+            .bigbrand {
+                font-size: 1.5em;
+            }
+        }
+    }
 }
 
-.bigbrand {
-    font-size: 1.5em;
+.content {
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.comments {
+  display: flex;
+  justify-content: center;
 }
 
 .centerstage {
@@ -26,11 +41,14 @@
 
 .post-content {
     font-size: 1.5em;
-}
-
-.btn-comment {
-    position: absolute;
-    right: 0px;
+    border: 1px solid black;
+    margin: 10px 0;
+    padding: 0 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 /*COLOR CHANGER*/
