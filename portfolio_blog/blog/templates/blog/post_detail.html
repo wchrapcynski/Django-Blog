@@ -10,8 +10,8 @@
     {% endif %}
         <p class="post-content">{{ post.title|safe|linebreaksbr }}</p>
     {% if user.is_authenticated %}
-        <a class="btn btn-primary" href="{% url 'post_edit' pk='post.pk' %}"><span class="glyphyicon glyphyicon-pencile"></span></a>
-        <a class="btn btn-primary" href="{% url 'post_remove' pk='post.pk' %}"><span class="glyphyicon glyphyicon-remove"></span></a>
+        <a class="btn btn-primary" href="{% url 'post_edit' pk='post.pk' %}"><span class="glyphicon glyphicon-pencile"></span></a>
+        <a class="btn btn-primary" href="{% url 'post_remove' pk='post.pk' %}"><span class="glyphicon glyphicon-remove"></span></a>
     {% endif %}
 
     <hr />
@@ -22,8 +22,8 @@
             {% if user.is_authenticated or comment.approve_comment %}
             {{ comment.created_date }}
                 {% if not comment.approve_comment %}
-                    <a class="btn btn-default" href="{% url 'comment_remove' pk='comment.pk' %}"><span class="glyphyicon glyphyicon-remove"></span></a>
-                    <a class="btn btn-primary" href="{% url 'comment_approve' pk='comment.pk' %}"><span class="glyphyicon glyphyicon-ok"></span></a>
+                    <a class="btn btn-default" href="{% url 'comment_remove' pk='comment.pk' %}"><span class="glyphicon glyphicon-remove"></span></a>
+                    <a class="btn btn-primary" href="{% url 'comment_approve' pk='comment.pk' %}"><span class="glyphicon glyphicon-ok"></span></a>
                 {% endif %}
                 <p>{{ comment.text|safe|linebreaks }}</p>
                 <p>Posted By: {{ comment.author }}</p>
