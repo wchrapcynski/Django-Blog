@@ -19,13 +19,13 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('author', models.CharField(max_length=200)),
                 ('text', models.TextField()),
-                ('create_date', models.DateTimeField(default=datetime.datetime(2020, 3, 13, 18, 45, 47, 648864, tzinfo=utc))),
+                ('created_date', models.DateTimeField(default=datetime.datetime(2020, 3, 13, 18, 45, 47, 648864, tzinfo=utc))),
                 ('approved_comment', models.BooleanField(default=False)),
             ],
         ),
         migrations.AlterField(
             model_name='post',
-            name='create_date',
+            name='created_date',
             field=models.DateTimeField(default=datetime.datetime(2020, 3, 13, 18, 45, 47, 648276, tzinfo=utc)),
         ),
         migrations.DeleteModel(

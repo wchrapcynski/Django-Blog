@@ -13,12 +13,12 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterField(
             model_name='comment',
-            name='create_date',
+            name='created_date',
             field=models.DateTimeField(default=django.utils.timezone.now),
         ),
         migrations.AlterField(
             model_name='post',
-            name='create_date',
+            name='created_date',
             field=models.DateTimeField(default=django.utils.timezone.now),
         ),
     ]

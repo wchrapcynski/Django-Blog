@@ -17,12 +17,15 @@
     <hr />
     <a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
     <div class="container">
-        {% for comment in post.comment.all %}
+        {% for comment in post.comments.all %}
             <br>
-            {% if user.is_authenticated or comment.approve_comment %}
+            {% if user.is_authenticated or comment.approved_comment %}
+            {% if not comment.approved_comment %}
+                <p>This comment needs approval:</p>
+            {% endif %}
             {{ comment.created_date }}
-                {% if not comment.approve_comment %}
-                    <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+            <a class="btn btn-default" href="{% url 'comment_delete' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                {% if not comment.approved_comment %}
                     <a class="btn btn-primary" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
                 {% endif %}
                 <p>{{ comment.text|safe|linebreaks }}</p>
